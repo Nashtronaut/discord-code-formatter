@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Editor settings
+.idea/*
+
+# Discord config settings
+config.json
