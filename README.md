@@ -5,6 +5,8 @@ This was a basic project to help me learn Python and learn a little bit about AP
 
 What it does is listens for messages across a discord guild and iterates through the messages, trying to predict if that message contains code and is not properly wrapped in discords markdown for code.
 
+If it detects code that is not formatted, it sends back their own message in a code block and points them to `!!help` for more information.
+
 The `!!help` call tells users how they can format code and syntax highlight it themselves. It also lists the available markdown highlighting on discord.
 
 ##### You can invite this bot to your server using this link 
