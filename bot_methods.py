@@ -5,6 +5,7 @@ def code_detection(message):
     code_symbols = ['<', '<=', '>', '>=', '=', '==', '||', '&&', '[', ']', '{', '}', '(', ')', ';', ':', '->']
     data_types = ['string', 'int', 'double', 'bool', 'float', 'long', 'char']
     prob = 0
+    check_for_format = 0
 
     message_split = message.content.split()
     if '```' in message_split:
@@ -16,6 +17,11 @@ def code_detection(message):
             for character in message_section:
                 if character in code_symbols:
                     prob += 1
+                elif character == '`':
+                    check_for_format += 1
+                    if check_for_format >= 6:
+                        prob = 0
+                        return prob
 
     return prob
 
@@ -27,8 +33,7 @@ def format_helper():
                            'JSON': 'json', 'Markdown': 'md', 'Machine Learning': 'ml',
                            'Pro Log': 'prolog', 'Python': 'py', 'XL': 'xl', 'XML': 'xml'}
 
-    message_content = 'Here is how you can format for yourself!``````<language_code>\n//Your code goes ' \
-                      'here\n//Remember to not separate with a space!\n//Available codes are...\n\n'
+    message_content = 'Here is how you can format for yourself!``````<language_code>\n//<Your code goes here>\n//End code block with three more backticks\n//Don\'t separate language code and backticks with a space!\n//Available codes are...\n\n'
     for i in syntax_highlighters:
         message_content += f'{i} = {syntax_highlighters[i]}\n'
 
