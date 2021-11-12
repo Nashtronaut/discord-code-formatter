@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.INFO)
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
+        await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name='for code to format!'))
 
     async def on_message(self, message):
         if not message.author == client.user:
@@ -21,7 +22,7 @@ class MyClient(discord.Client):
                                            'learn more about this, type !help\n...' + '```' + str(
                     message.content) + '```')
             print(f'Code detection probability: {prob}')
-        elif message.content == '!!help':
+        if message.content == '!!help':
             print('Help method requested, firing')
             help_message = bot_methods.format_helper()
             await message.channel.send(help_message)
