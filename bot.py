@@ -7,17 +7,19 @@ from config import config
 intents = discord.Intents.default()
 logging.basicConfig(level=logging.INFO)
 
-
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name='for code to format!'))
+        await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name='for code!'))
 
     async def on_message(self, message):
+        
+        trigger = 3 # INCREASE OR DECREASE TO ADJUST BOT SENSITIVITY
+        
         if not message.author == client.user:
             prob = bot_methods.code_detection(message)
             print(message.content)
-            if prob >= 3:
+            if prob >= trigger: 
                 await message.channel.send('Hey! Hope you don\'t mind me, I\'m just formatting your code for you! To '
                                            'learn more about this, type !!help\n...' + '```' + str(
                     message.content) + '```')

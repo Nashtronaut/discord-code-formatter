@@ -1,31 +1,24 @@
-﻿import discord
-
+﻿
+# Code detection works on a simple probability calculator. It is trying to detect uncommon symbols and patterns
+# used in code. If servers find the bot to be too sensitive, increase required probability in bot.py trigger
 
 def code_detection(message):
-    code_symbols = ['<', '<=', '>', '>=', '=', '==', '||', '&&', '[', ']', '{', '}', '(', ')', ';', ':', '->']
-    data_types = ['string', 'int', 'double', 'bool', 'float', 'long', 'char']
-    prob = 0
-    check_for_format = 0
+    code_symbols = ['<', '<=', '>', '>=', '=', '==', '||', '&&', '[', ']', '{', '}', '(', ')', ';', ':', '->', '#']
+    data_types = ['string', 'int', 'double', 'bool', 'float', 'long', 'char', 'bash', 'bin']
+    prob: int = 0
 
     message_split = message.content.split()
-    if '```' in message_split:
-        return 'Message already formatted'
-    else:
-        for message_section in message_split:
-            if message_section in data_types:
-                prob += 1
+    for message_section in message_split:
+        if message_section.startswith('```'): # ignores messages that code blocks are detected in
+            return
+        if message_section in data_types:
+            prob += 1
+        else:
             for character in message_section:
                 if character in code_symbols:
                     prob += 1
-                elif character == '`':
-                    check_for_format += 1
-                    if check_for_format >= 6:
-                        prob = 0
-                        return prob
-
     return prob
-
-
+    
 def format_helper():
     syntax_highlighters = {'Ascii Doc': 'asciidoc', 'Auto Hot Key': 'autohotkey', 'Bash': 'bash',
                            'Coffee Script': 'coffeescript', 'C++': 'cpp', 'C#': 'cs', 'CSS': 'css',
