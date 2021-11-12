@@ -10,10 +10,10 @@ def code_detection(message):
     if '```' in message_split:
         return 'Message already formatted'
     else:
-        for i in range(len(message_split) - 1):
-            if message_split[i] in data_types:
+        for message_section in message_split:
+            if message_section in data_types:
                 prob += 1
-            for character in message_split[i]:
+            for character in message_section:
                 if character in code_symbols:
                     prob += 1
 

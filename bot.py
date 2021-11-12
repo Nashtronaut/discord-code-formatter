@@ -19,7 +19,7 @@ class MyClient(discord.Client):
             print(message.content)
             if prob >= 3:
                 await message.channel.send('Hey! Hope you don\'t mind me, I\'m just formatting your code for you! To '
-                                           'learn more about this, type !help\n...' + '```' + str(
+                                           'learn more about this, type !!help\n...' + '```' + str(
                     message.content) + '```')
             print(f'Code detection probability: {prob}')
         if message.content == '!!help':
