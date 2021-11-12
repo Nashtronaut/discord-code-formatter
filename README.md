@@ -1,4 +1,5 @@
-![Heroku](https://pyheroku-badge.herokuapp.com/?app=code-formatter-bot&style=<STYLE>)
+![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=bot.py)
+
 
 # discord-code-formatter
 A discord bot to check if messages have the correct code formatting. 
