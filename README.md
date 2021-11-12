@@ -1,3 +1,8 @@
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=bot.py)
+
+
 # discord-code-formatter
 A discord bot to check if messages have the correct code formatting. 
 
