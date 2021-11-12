@@ -132,4 +132,4 @@ dmypy.json
 .idea/*
 
 # Discord config settings
-config.json
+config.py
