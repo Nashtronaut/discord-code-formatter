@@ -7,7 +7,8 @@ What it does is listens for messages across a discord guild and iterates through
 
 The `!!help` call tells users how they can format code and syntax highlight it themselves. It also lists the available markdown highlighting on discord.
 
-##### You can invite this bot to your server using this link https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permissions=274877990912&scope=bot
+##### You can invite this bot to your server using this link 
+https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permissions=274877990912&scope=bot
 
 ### Thanks for viewing! 
 
