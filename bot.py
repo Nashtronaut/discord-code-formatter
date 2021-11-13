@@ -1,29 +1,28 @@
 ﻿import bot_methods
 import logging
 import discord
-
 from config import config
+import bot_methods
 
 intents = discord.Intents.default()
 logging.basicConfig(level=logging.INFO)
 
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name='for code!'))
+        await client.change_presence(status=discord.Status.online,
+                                     activity=discord.Activity(type=discord.ActivityType.listening, name='for code!'))
 
     async def on_message(self, message):
-        
-        trigger = 3 # INCREASE OR DECREASE TO ADJUST BOT SENSITIVITY
-        
+
         if not message.author == client.user:
-            prob = bot_methods.code_detection(message)
-            print(message.content)
-            if prob >= trigger: 
+            lang_code = bot_methods.code_detection(message.content)
+            if lang_code:
                 await message.channel.send('Hey! Hope you don\'t mind me, I\'m just formatting your code for you! To '
-                                           'learn more about this, type !!help\n...' + '```' + str(
+                                           f'learn more about this, type !!help\n...\n```{lang_code}\n' + str(
                     message.content) + '```')
-            print(f'Code detection probability: {prob}')
+                print(f'Language detected = {lang_code}')
         if message.content == '!!help':
             print('Help method requested, firing')
             help_message = bot_methods.format_helper()
