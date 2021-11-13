@@ -3,6 +3,7 @@
 ![Heroku](http://heroku-badge.herokuapp.com/?app=heroku-badge&root=bot.py)
 
 
+
 # discord-code-formatter
 A discord bot to check if messages have the correct code formatting. 
 
@@ -21,6 +22,8 @@ The `!!help` call tells users how they can format code and syntax highlight it t
 
 ##### You can invite this bot to your server using this link 
 https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permissions=274877990912&scope=bot
+
+![Screenshot 2021-11-12 214707](https://user-images.githubusercontent.com/48274410/141606006-64dd3ff4-33d0-4f30-94a2-3c9741921b78.png)
 
 ### Thanks for viewing! 
 
