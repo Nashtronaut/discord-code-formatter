@@ -22,6 +22,6 @@ https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permission
 
 ### Thanks for viewing! 
 
-*This project was built using py-cord, a discord.py wrapper. See more information here https://github.com/Pycord-Development/pycord
+*This project was built using py-cord, a discord.py wrapper. See more information here https://github.com/Pycord-Development/pycord*
 
 *This project also uses a library called guesslang, a library to identify code languages from strings. See more here https://github.com/yoeo/guesslang*
