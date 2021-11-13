@@ -18,13 +18,11 @@ class MyClient(discord.Client):
 
         if not message.author == client.user:
             lang_code = bot_methods.code_detection(message.content)
-            if lang_code:
+            if lang_code is not None:
                 await message.channel.send('Hey! Hope you don\'t mind me, I\'m just formatting your code for you! To '
                                            f'learn more about this, type !!help\n...\n```{lang_code}\n' + str(
                     message.content) + '```')
-                print(f'Language detected = {lang_code}')
         if message.content == '!!help':
-            print('Help method requested, firing')
             help_message = bot_methods.format_helper()
             await message.channel.send(help_message)
 

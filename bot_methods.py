@@ -2,20 +2,19 @@
 
 syntax_highlighters = {'Ascii Doc': 'asciidoc', 'Auto Hot Key': 'autohotkey', 'Bash': 'bash',
                        'Coffeescript': 'coffeescript', 'C++': 'cpp', 'C#': 'cs', 'CSS': 'css',
-                       'Git Diff (+ -)': 'diff', 'Fix': 'fix', 'GLSL': 'glsl', 'INI': 'ini',
+                       'Git Diff (+ -)': 'diff', 'Fix': 'fix', 'GLSL': 'glsl',
                        'JSON': 'json', 'Markdown': 'md', 'Machine Learning': 'ml',
                        'Prolog': 'prolog', 'Python': 'py', 'XL': 'xl', 'XML': 'xml'}
 
 
 def code_detection(message):
     guess = Guess()
-    highlighter_code = ''
+    highlighter_code = None
     lang_guess = guess.language_name(message)
 
     if lang_guess in syntax_highlighters:
         highlighter_code = syntax_highlighters[lang_guess]
 
-    print(highlighter_code)
     return highlighter_code
 
 
