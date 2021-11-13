@@ -8,9 +8,12 @@ A discord bot to check if messages have the correct code formatting.
 
 This was a basic project to help me learn Python and learn a little bit about API's and hosting workers on heroku.
 
-What it does is listens for messages across a discord guild and iterates through the messages, trying to predict if that message contains code and is not properly wrapped in discords markdown for code.
+What it does is listens for messages with code inside, that are not formatted properly. 
 
-If it detects code that is not formatted, it sends back their own message in a code block and points them to `!!help` for more information.
+For example, if someone copy and pastes code into a guild for help with using code blocks or syntax highlighting.
+
+If the bot detects code in the message, it will return the message back in the same channel properly highlighted and formatted based on guesslang's best guess.
+guesslang is not a perfect library in terms of guessing languages, but it works for this purpose. Besides, we don't want the bot triggering for smaller messages anyway.
 
 The `!!help` call tells users how they can format code and syntax highlight it themselves. It also lists the available markdown highlighting on discord.
 
@@ -19,4 +22,6 @@ https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permission
 
 ### Thanks for viewing! 
 
-*This project was built using py-cord, a discord.py wrapper. See more information here https://github.com/Pycord-Development/pycord*
+*This project was built using py-cord, a discord.py wrapper. See more information here https://github.com/Pycord-Development/pycord
+
+*This project also uses a library called guesslang, a library to identify code languages from strings. See more here https://github.com/yoeo/guesslang*
