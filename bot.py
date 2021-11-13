@@ -2,7 +2,6 @@
 import logging
 import discord
 from config import config
-import bot_methods
 
 intents = discord.Intents.default()
 logging.basicConfig(level=logging.INFO)
