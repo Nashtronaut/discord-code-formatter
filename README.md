@@ -15,6 +15,8 @@ For example, if someone copy and pastes code into a guild for help with using co
 If the bot detects code in the message, it will return the message back in the same channel properly highlighted and formatted based on guesslang's best guess.
 guesslang is not a perfect library in terms of guessing languages, but it works for this purpose. Besides, we don't want the bot triggering for smaller messages anyway.
 
+Unfortunately, I had to disable .INI code detection as some regular messages were flagging the bot. 
+
 The `!!help` call tells users how they can format code and syntax highlight it themselves. It also lists the available markdown highlighting on discord.
 
 ##### You can invite this bot to your server using this link 
