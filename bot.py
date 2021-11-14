@@ -23,6 +23,7 @@ class MyClient(discord.Client):
                     message.content) + '```')
         if message.content == '!!help':
             help_message = bot_methods.format_helper()
+            print('test gpg key')
             await message.channel.send(help_message)
 
 
