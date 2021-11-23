@@ -23,7 +23,7 @@ The `!!help` call tells users how they can format code and syntax highlight it t
 ##### You can invite this bot to your server using this link 
 https://discord.com/api/oauth2/authorize?client_id=908433441102630933&permissions=274877990912&scope=bot
 
-![image](https://user-images.githubusercontent.com/48274410/143137498-93ad2e24-6c77-4a29-bb86-adda8dac9f0d.png)
+![image](https://user-images.githubusercontent.com/48274410/143137680-2f00a9f5-bd96-44a4-ac8b-7ecf58db11ed.png)
 
 ### Thanks for viewing! 
 
